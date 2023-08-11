@@ -1,0 +1,14 @@
+
+section{
+background: linear-gradient(to right, #3c1053, #ad5389); 
+height: 100vh;
+
+.inputForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .formInfo{
+        width: 400px;
+    }
+}
+}

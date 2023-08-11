@@ -1,0 +1,48 @@
+
+
+<section class="section-header">
+    <h1 class="bg-primary text-white text-center p-4">To Do List</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 inputForm">
+            <div class="form-group">
+                <input type="text" class="form-control formInfo" placeholder="Type To Add Todo"
+                [(ngModel)]="todoItem"
+                >
+                <div class="text-right">
+                    <button class="btn btn-info mt-3"
+                    (click)="ontodoAdd()"
+                    >
+                        Add Todo
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4 ">
+            <ul class="list-group p-5 bg-warning">
+              <div class="card">
+                <div class="card-body">
+                    <li class="list-group-item bg-dark p-3 mb-3 text-white text-center"
+                    *ngFor="let todo of toDoArray;let i=index"
+                   >
+                   {{todo}}
+                  <div class="d-flex justify-content-between">
+                   <button class="btn btn-warning " 
+                   (click)="onEdit(todo)"
+                   >Edit</button>
+                   <button class="btn btn-danger"
+                   (click)="onDelete(todo)">Delete</button>
+                  </div>
+                   </li>
+                   <p class="mb-0 alert alert-info"
+                   *ngIf="toDoArray.length<1"
+                   >
+                    No Todo Item Added Yet !!!
+                   </p>
+                </div>
+              </div>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
